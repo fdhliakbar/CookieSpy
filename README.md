@@ -5,6 +5,11 @@ Supports colorized CLI display (via `rich`), export to JSON/CSV, and a simple we
 
 ---
 
+## FLowchart
+
+<img src="./cookiespy-diagram.drawio.png" alt="diagram business for cookiespy" />
+
+
 ## How to Install
 
 Clone this repo
