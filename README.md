@@ -1,1 +1,68 @@
-HI
+# 🍪 CookieSpy
+
+CookieSpy is a simple tool for retrieving, displaying, and exporting cookies from a URL.  
+Supports colorized CLI display (via `rich`), export to JSON/CSV, and a simple web-based GUI (Flask).
+
+---
+
+## How to Install
+
+Clone this repo
+```bash
+https://github.com/fdhliakbar/CookieSpy.git
+```
+
+Install requirements
+```bash
+pip install -r requirements.txt
+```
+
+## How to Use
+
+With CLI
+```bash
+# example 01
+python cookiespy.py https://httpbin.org/cookies/set?testcookie=value
+
+# example 02
+python cookiespy.py https://github.com
+```
+
+CLI with Export cookies
+```bash
+# fromat json
+python cookiespy.py <URL> --export json
+
+# format csv
+python cookiespy.py <URL> --export csv
+
+```
+
+With GUI
+```bash
+python webapp.py
+```
+Enter the URL → click **Fetch Cookies** → the results will be displayed in the table.
+
+---
+
+### Example
+
+```bash
+python cookiespy.py https://github.com
+```
+
+### Output
+
+```bash
+🔍 Mengambil cookies...
+
+✔ Cookies ditemukan: {'_gh_sess': 
+'3TLOJqcMKU9Mi5JN8EkecauN9FsSaImjhCOiKu8YDXpalofmkZbBe1xYtVDBFYf6bmbNh6MTfg8IVY2wsq%2FVN46DF2ok51y2O%2FHGYnq1X8qXX3zLmRFtZzierEp1O%2BuPy9StY3jL11vTVDNmjvX2%2Bdfy99JZ0fZOc
+Dle6ZmLE0%2F8kvP6oMMB%2FGhOb0jGTwRPpEuAfmy%2BFmoGfg%2FqUZTpNk6JvPifKDVLAFwVPH08JyFwuf2YxM1tRs1S2Rx7H%2B%2Blo8mLWUKKDpVeGaONLYeNbQ%3D%3D--2bPnIxmDdV4DSGDx--L5Zjb9nicw2HqWy
+0LoVW%2BQ%3D%3D', '_octo': 'GH1.1.89567047.1755552745', 'logged_in': 'no'}
+```
+
+---
+
+<img src="https://i.pinimg.com/1200x/34/bc/74/34bc74db715b60696c10f5a72d3dc513.jpg" alt="Gif Banner" />

@@ -1,38 +1,35 @@
 import requests
-import sys
+from urllib.parse import urlparse
+from exporter import export_to_json, export_to_csv
+from rich.console import Console
 
-def check_cookies(url):
+console = Console()
+
+def fetch_cookies(url):
     try:
-        session = requests.Session()
-        response = session.get(url, allow_redirects=True)
-
-        cookies = session.cookies
-
-        if not cookies:
-            print(f"[!] Tidak ada cookie ditemukan dari {url}")
-            return
-
-        print(f"\n🍪 Cookie Analysis for: {url}\n")
-        print("{:<20} {:<10} {:<10} {:<15}".format("Cookie", "Secure", "HttpOnly", "SameSite"))
-        print("-" * 60)
-
-        for cookie in cookies:
-            cookie_attrs = cookie.__dict__
-
-            secure = "Yes" if cookie.secure else "No"
-            httponly = "Yes" if "HttpOnly" in cookie_attrs.get("_rest", {}) else "No"
-            samesite = cookie_attrs.get("samesite", "None")
-
-            print("{:<20} {:<10} {:<10} {:<15}".format(cookie.name, secure, httponly, samesite))
-
+        response = requests.get(url)
+        cookies = response.cookies.get_dict()
+        return cookies
     except Exception as e:
-        print(f"Error: {e}")
-
+        console.print(f"[red][!] Error mengambil cookies: {e}[/red]")
+        return {}
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python cookiespy.py <url>")
-        sys.exit(1)
+    import argparse
+    parser = argparse.ArgumentParser(description="CookieSpy CLI")
+    parser.add_argument("url", help="URL target")
+    parser.add_argument("--export", choices=["json", "csv"], help="Export format")
+    args = parser.parse_args()
 
-    url = sys.argv[1]
-    check_cookies(url)
+    console.print("[cyan]🔍 Mengambil cookies...[/cyan]")
+    cookies = fetch_cookies(args.url)
+
+    if cookies:
+        console.print(f"[green]✔ Cookies ditemukan:[/green] {cookies}")
+
+        if args.export == "json":
+            export_to_json(cookies)
+        elif args.export == "csv":
+            export_to_csv(cookies)
+    else:
+        console.print("[yellow][!] Tidak ada cookie ditemukan[/yellow]")
