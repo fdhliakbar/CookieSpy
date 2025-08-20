@@ -1,3 +1,15 @@
+Metadata-Version: 2.4
+Name: cookiespy
+Version: 0.1.0
+Summary: A simple cookie inspection & export CLI tool.
+Author-email: Fadhli Akbar <your@email.com>
+License: MIT
+Project-URL: Homepage, https://github.com/fdhliakbar/cookiespy
+Project-URL: Issues, https://github.com/fdhliakbar/cookiespy/issues
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: requests>=2.0
+
 # 🍪 CookieSpy
 
 CookieSpy is a simple tool for retrieving, displaying, and exporting cookies from a URL.  
@@ -24,7 +36,7 @@ pip install -r requirements.txt
 
 ## How to Use
 
-<!-- With CLI
+With CLI
 ```bash
 # example 01
 python cookiespy.py https://httpbin.org/cookies/set?testcookie=value
@@ -66,9 +78,17 @@ python cookiespy.py https://github.com
 '3TLOJqcMKU9Mi5JN8EkecauN9FsSaImjhCOiKu8YDXpalofmkZbBe1xYtVDBFYf6bmbNh6MTfg8IVY2wsq%2FVN46DF2ok51y2O%2FHGYnq1X8qXX3zLmRFtZzierEp1O%2BuPy9StY3jL11vTVDNmjvX2%2Bdfy99JZ0fZOc
 Dle6ZmLE0%2F8kvP6oMMB%2FGhOb0jGTwRPpEuAfmy%2BFmoGfg%2FqUZTpNk6JvPifKDVLAFwVPH08JyFwuf2YxM1tRs1S2Rx7H%2B%2Blo8mLWUKKDpVeGaONLYeNbQ%3D%3D--2bPnIxmDdV4DSGDx--L5Zjb9nicw2HqWy
 0LoVW%2BQ%3D%3D', '_octo': 'GH1.1.89567047.1755552745', 'logged_in': 'no'}
-``` -->
+```
 
-### Install Packages
+---
+
+## Production
+
+```bash
+Successfully built cookiespy-0.1.0.tar.gz and cookiespy-0.1.0-py3-none-any.whl
+```
+
+## Install Packages
 
 ```bash
 pip install dist/cookiespy-0.1.0-py3-none-any.whl
@@ -76,26 +96,5 @@ pip install dist/cookiespy-0.1.0-py3-none-any.whl
 Installing collected packages: cookiespy
 Successfully installed cookiespy-0.1.0
 ```
-
-### Run Program with CLI(Command Line Interface)
-```bash
-# Export with JSON
-cookiespy https://youtube.com/ --export json
-
-# Export with CSV
-cookiespy https://youtube.com/ --export csv
-
-```
-
-### Output
-``` bash
-Fetching cookies from: https://youtube.com/
-Cookies found: {'GPS': '1', 'YSC': 'vsffeGLJxhU', 'VISITOR_INFO1_LIVE': '-F5Uurh13H0', 'VISITOR_PRIVACY_METADATA': 'CgJJRBIEGgAgYA%3D%3D', '__Secure-ROLLOUT_TOKEN': 
-'COi1zMK9u_uNCxDTlJ2jw5mPAxjTlJ2jw5mPAw%3D%3D'}
-[+] Cookies diexport ke cookies.json
-Exported cookies to cookies.json
-```
-
----
 
 <img src="https://i.pinimg.com/1200x/34/bc/74/34bc74db715b60696c10f5a72d3dc513.jpg" alt="Gif Banner" />
