@@ -1,39 +1,56 @@
 import argparse
-from cookiespy.exporter import export_to_json, export_to_csv
-from rich.console import Console
 import requests
+from rich.console import Console
 from urllib.parse import urlparse
+from cookiespy.exporter import export_to_json, export_to_csv
+import re
 
 console = Console()
 
-def fetch_cookies(url):
+def validate_url(url: str) -> str:
+    """Validasi format URL, raise ValueError jika tidak valid"""
+    parsed = urlparse(url)
+    if not parsed.scheme or not parsed.netloc:
+        raise ValueError(f"URL tidak valid: {url}")
+    return url
+
+def fetch_cookies(url: str) -> dict:
+    """Ambil cookies dari URL target"""
     try:
         response = requests.get(url)
-        cookies = response.cookies.get_dict()
-        return cookies
-    except Exception as e:
-        console.print(f"[red][!] Error mengambil cookies: {e}[/red]")
-        return {}
+        response.raise_for_status()
+        return response.cookies.get_dict()
+    except requests.exceptions.RequestException as e:
+        raise RuntimeError(f"Gagal mengambil cookies dari {url}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="CookieSpy - Inspect and export cookies")
     parser.add_argument("url", help="Target URL to fetch cookies from")
     parser.add_argument("--export", choices=["json", "csv"], help="Export format")
+    parser.add_argument("--output", help="Output file name (default: cookies.json / cookies.csv)", default=None)
     args = parser.parse_args()
 
-    console.print(f"[bold green]Fetching cookies from:[/bold green] {args.url}")
-    response = requests.get(args.url)
+    try:
+        target_url = validate_url(args.url)
+        console.print(f"[bold green]Fetching cookies from:[/bold green] {target_url}")
+        cookies = fetch_cookies(target_url)
 
-    cookies = response.cookies.get_dict()
-    console.print(f"[cyan]Cookies found:[/cyan] {cookies}")
+        if not cookies:
+            console.print("[red]Tidak ada cookies yang ditemukan.[/red]")
+        else:
+            console.print(f"[cyan]Cookies found:[/cyan] {cookies}")
 
-    if args.export == "json":
-        export_to_json(cookies, "cookies.json")
-        console.print("[yellow]Exported cookies to cookies.json[/yellow]")
-    elif args.export == "csv":
-        export_to_csv(cookies, "cookies.csv")
-        console.print("[yellow]Exported cookies to cookies.csv[/yellow]")
+        if args.export:
+            filename = args.output or f"cookies.{args.export}"
+            if args.export == "json":
+                export_to_json(cookies, filename)
+            elif args.export == "csv":
+                export_to_csv(cookies, filename)
+            console.print(f"[yellow]Exported cookies to {filename}[/yellow]")
 
-# Ensure main is called when run as a script
+    except Exception as e:
+        console.print(f"[red][!] {e}[/red]")
+        raise
+
 if __name__ == "__main__":
     main()
