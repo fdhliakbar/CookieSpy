@@ -15,13 +15,13 @@ def test_validate_url_invalid():
 
 
 def test_fetch_cookies_real_site():
-    """Tes ke situs nyata (YouTube). Bisa skip di CI untuk stabilitas."""
+    """Test with real site (YouTube). Can be skipped in CI for stability."""
     cookies = fetch_cookies("https://www.youtube.com")
     assert isinstance(cookies, dict)
 
 
 def test_cli_help():
-    """Tes opsi --help"""
+    """Test --help option"""
     result = subprocess.run(
         [sys.executable, "-m", "cookiespy.cli", "--help"],
         capture_output=True,
@@ -31,7 +31,7 @@ def test_cli_help():
 
 
 def test_cli_with_export_json(tmp_path):
-    """Tes export JSON"""
+    """Test export JSON"""
     output_file = tmp_path / "yt_cookies.json"
     result = subprocess.run(
         [sys.executable, "-m", "cookiespy.cli", "https://www.youtube.com", "--export", "json", "--output", str(output_file)],
@@ -43,7 +43,7 @@ def test_cli_with_export_json(tmp_path):
 
 
 def test_cli_with_export_csv(tmp_path):
-    """Tes export CSV"""
+    """Test export CSV"""
     output_file = tmp_path / "yt_cookies.csv"
     result = subprocess.run(
         [sys.executable, "-m", "cookiespy.cli", "https://www.youtube.com", "--export", "csv", "--output", str(output_file)],

@@ -8,20 +8,20 @@ from cookiespy.exporter import export_to_json, export_to_csv
 console = Console()
 
 def validate_url(url: str) -> str:
-    """Validasi format URL, raise ValueError jika tidak valid"""
+    """Validate URL format, raise ValueError if invalid"""
     parsed = urlparse(url)
     if not parsed.scheme or not parsed.netloc:
-        raise ValueError(f"URL tidak valid: {url}")
+        raise ValueError(f"Invalid URL: {url}")
     return url
 
 def fetch_cookies(url: str) -> dict:
-    """Ambil cookies dari URL target"""
+    """Fetch cookies from target URL"""
     try:
         response = requests.get(url)
         response.raise_for_status()
         return response.cookies.get_dict()
     except requests.exceptions.RequestException as e:
-        raise RuntimeError(f"Gagal mengambil cookies dari {url}: {e}")
+        raise RuntimeError(f"Failed to fetch cookies from {url}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="CookieSpy - Inspect and export cookies")
@@ -36,7 +36,7 @@ def main():
         cookies = fetch_cookies(target_url)
 
         if not cookies:
-            console.print("[red]Tidak ada cookies yang ditemukan.[/red]")
+            console.print("[red]No cookies found.[/red]")
         else:
             console.print(f"[cyan]Cookies found:[/cyan] {cookies}")
 
