@@ -9,7 +9,7 @@ description = "A simple cookie inspection & export CLI tool."
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
-  { name="Fadhli Akbar", email="your@email.com" }
+  { name="Fadhli Akbar", email="fadhliakbar125@gmail.com" }
 ]
 dependencies = [
   "requests>=2.0",
