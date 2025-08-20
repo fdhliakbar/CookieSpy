@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template_string, send_file
 from cookiespy import fetch_cookies
-from exporter import export_to_json, export_to_csv
+from cookiespy.exporter import export_to_json, export_to_csv
 
 app = Flask(__name__)
 
