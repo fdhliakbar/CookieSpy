@@ -96,6 +96,33 @@ Cookies found: {'GPS': '1', 'YSC': 'vsffeGLJxhU', 'VISITOR_INFO1_LIVE': '-F5Uurh
 Exported cookies to cookies.json
 ```
 
+## Testing
+
+Before testing, you must install the required packages. You can install all the required packages by
+
+```bash
+#Install requirement first
+pip install -r requirements.txt
+
+
+# Then you can enter the directory and run the program like this
+cd test; pytest -v testing.py
+
+# Output 
+
+========================================================================== test session starts ==========================================================================
+platform win32 -- Python 3.13.3, pytest-8.4.1, pluggy-1.6.0 -- C:\Users\USER\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: E:\Github-Database\CookieSpy
+configfile: pyproject.toml
+plugins: anyio-4.9.0
+collected 1 item                                                                                                                                                         
+
+testing.py::test_fetch_cookies_google PASSED                                                                                                                       [100%]
+
+=========================================================================== 1 passed in 1.25s ===========================================================================
+```
+
 ---
 
 <img src="https://i.pinimg.com/1200x/34/bc/74/34bc74db715b60696c10f5a72d3dc513.jpg" alt="Gif Banner" />
