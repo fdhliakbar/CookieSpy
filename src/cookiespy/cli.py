@@ -3,7 +3,7 @@ import requests
 from rich.console import Console
 from urllib.parse import urlparse
 from cookiespy.exporter import export_to_json, export_to_csv
-import re
+
 
 console = Console()
 
