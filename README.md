@@ -125,4 +125,4 @@ testing.py::test_fetch_cookies_google PASSED                                    
 
 ---
 
-<img src="https://i.pinimg.com/1200x/34/bc/74/34bc74db715b60696c10f5a72d3dc513.jpg](https://i.pinimg.com/736x/59/3b/32/593b32191e9f9c8cf69fa39842d94dc3.jpg" alt="Gif Banner" />
+<img src="https://i.pinimg.com/1200x/34/bc/74/34bc74db715b60696c10f5a72d3dc513.jpg" alt="Gif Banner" />
