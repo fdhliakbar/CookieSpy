@@ -14,6 +14,11 @@ Supports colorized CLI display (via `rich`), export to JSON/CSV, and a simple we
 
 ## Installation
 
+With PyPI
+```bash
+pip install cookiespy
+```
+
 Clone this repository
 ```bash
 https://github.com/fdhliakbar/CookieSpy.git
@@ -59,7 +64,7 @@ cookiespy https://youtube.com/ --export csv
 
 ```
 
-### Output JSON
+### Output JSON from Terminal
 ```bash
 Fetching cookies from: https://facebook.com/
 Cookies found: {'fr': '0qhvcEPszmVSmExBF..Boqw-r..AAA.0.0.Boqw-r.AWe5t84W9KkqFc6QoQPZqX7icCs', 'sb': 'qw-raOaLC5CvSSBM3qNhw0wf'}
@@ -67,7 +72,7 @@ Cookies found: {'fr': '0qhvcEPszmVSmExBF..Boqw-r..AAA.0.0.Boqw-r.AWe5t84W9KkqFc6
 Exported cookies to cookies.json
 ```
 
-### Output CSV
+### Output CSV from Terminal
 ```bash
 Fetching cookies from: https://facebook.com/
 Cookies found: {'fr': '0o5AyAWMjYLU5Wf8G..Boqw_G..AAA.0.0.Boqw_G.AWejVulJjL0qf-r097kKCKBqM4k', 'sb': 'xg-raIpCTxgOpbwcUJfHj7bj'}
@@ -100,6 +105,23 @@ collected 1 item
 testing.py::test_fetch_cookies_google PASSED                                                                                                                       [100%]
 
 =========================================================================== 1 passed in 1.25s ===========================================================================
+```
+
+---
+
+### Example for User
+
+```python
+import cookiespy
+
+url = "https://youtube.com"
+cookies = cookiespy.get_cookies(url)
+print(cookies)
+```
+
+```bash
+python your_file.py
+{'GPS': '1', 'YSC': 'ZURMJelC7BE', '__Secure-ROLLOUT_TOKEN': 'CLCs2Yu9lrzMIhD2lbW716OPAxj2lbW716OPAw%3D%3D', 'VISITOR_INFO1_LIVE': 'OF9aXStzneU', 'VISITOR_PRIVACY_METADATA': 'CgJJRBIEGgAgJQ%3D%3D'}
 ```
 
 ---
