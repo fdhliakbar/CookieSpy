@@ -7,12 +7,14 @@ Supports colorized CLI display (via `rich`), export to JSON/CSV, and a simple we
 
 ## FLowchart
 
+<center>
 <img src="./cookiespy-diagram.drawio.png" alt="diagram business for cookiespy" />
+</center>
 
 
-## How to Install
+## Installation
 
-Clone this repo
+Clone this repository
 ```bash
 https://github.com/fdhliakbar/CookieSpy.git
 ```
@@ -22,42 +24,12 @@ Install requirements
 pip install -r requirements.txt
 ```
 
-## How to Use
-
-<!-- With CLI
+Install as a package (recommended):
 ```bash
-# example 01
-python cookiespy.py https://httpbin.org/cookies/set?testcookie=value
-
-# example 02
-python cookiespy.py https://github.com
+pip install -e .
 ```
 
-CLI with Export cookies
-```bash
-# fromat json
-python cookiespy.py <URL> --export json
-
-# format csv
-python cookiespy.py <URL> --export csv
-
-```
-
-With GUI
-```bash
-python webapp.py
-```
-Enter the URL → click **Fetch Cookies** → the results will be displayed in the table.
-
----
-
-### Example
-
-```bash
-python cookiespy.py https://github.com
-```
-
-### Output
+## CLI Usage
 
 ```bash
 🔍 Mengambil cookies...
@@ -87,13 +59,20 @@ cookiespy https://youtube.com/ --export csv
 
 ```
 
-### Output
-``` bash
-Fetching cookies from: https://youtube.com/
-Cookies found: {'GPS': '1', 'YSC': 'vsffeGLJxhU', 'VISITOR_INFO1_LIVE': '-F5Uurh13H0', 'VISITOR_PRIVACY_METADATA': 'CgJJRBIEGgAgYA%3D%3D', '__Secure-ROLLOUT_TOKEN': 
-'COi1zMK9u_uNCxDTlJ2jw5mPAxjTlJ2jw5mPAw%3D%3D'}
+### Output JSON
+```bash
+Fetching cookies from: https://facebook.com/
+Cookies found: {'fr': '0qhvcEPszmVSmExBF..Boqw-r..AAA.0.0.Boqw-r.AWe5t84W9KkqFc6QoQPZqX7icCs', 'sb': 'qw-raOaLC5CvSSBM3qNhw0wf'}
 [+] Cookies diexport ke cookies.json
 Exported cookies to cookies.json
+```
+
+### Output CSV
+```bash
+Fetching cookies from: https://facebook.com/
+Cookies found: {'fr': '0o5AyAWMjYLU5Wf8G..Boqw_G..AAA.0.0.Boqw_G.AWejVulJjL0qf-r097kKCKBqM4k', 'sb': 'xg-raIpCTxgOpbwcUJfHj7bj'}
+[+] Cookies diexport ke cookies.csv
+Exported cookies to cookies.csv
 ```
 
 ## Testing
@@ -125,4 +104,4 @@ testing.py::test_fetch_cookies_google PASSED                                    
 
 ---
 
-<img src="https://i.pinimg.com/1200x/a4/e2/1d/a4e21d7792f29b6f7e54e2a4101cdbd4.jpg" alt="Anime Banner" />
+<img src="https://i.pinimg.com/1200x/2c/be/1d/2cbe1db9099cfd8409444f5837d16afb.jpg" alt="Anime Banner" />
