@@ -7,12 +7,14 @@ Supports colorized CLI display (via `rich`), export to JSON/CSV, and a simple we
 
 ## FLowchart
 
+<center>
 <img src="./cookiespy-diagram.drawio.png" alt="diagram business for cookiespy" />
+</center>
 
 
-## How to Install
+## Installation
 
-Clone this repo
+Clone this repository
 ```bash
 https://github.com/fdhliakbar/CookieSpy.git
 ```
@@ -22,42 +24,12 @@ Install requirements
 pip install -r requirements.txt
 ```
 
-## How to Use
-
-<!-- With CLI
+Install as a package (recommended):
 ```bash
-# example 01
-python cookiespy.py https://httpbin.org/cookies/set?testcookie=value
-
-# example 02
-python cookiespy.py https://github.com
+pip install -e .
 ```
 
-CLI with Export cookies
-```bash
-# fromat json
-python cookiespy.py <URL> --export json
-
-# format csv
-python cookiespy.py <URL> --export csv
-
-```
-
-With GUI
-```bash
-python webapp.py
-```
-Enter the URL → click **Fetch Cookies** → the results will be displayed in the table.
-
----
-
-### Example
-
-```bash
-python cookiespy.py https://github.com
-```
-
-### Output
+## CLI Usage
 
 ```bash
 🔍 Mengambil cookies...
@@ -125,4 +97,4 @@ testing.py::test_fetch_cookies_google PASSED                                    
 
 ---
 
-<img src="https://i.pinimg.com/1200x/a4/e2/1d/a4e21d7792f29b6f7e54e2a4101cdbd4.jpg" alt="Anime Banner" />
+<img src="https://i.pinimg.com/1200x/2c/be/1d/2cbe1db9099cfd8409444f5837d16afb.jpg" alt="Anime Banner" />
