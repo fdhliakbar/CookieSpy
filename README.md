@@ -59,13 +59,20 @@ cookiespy https://youtube.com/ --export csv
 
 ```
 
-### Output
-``` bash
-Fetching cookies from: https://youtube.com/
-Cookies found: {'GPS': '1', 'YSC': 'vsffeGLJxhU', 'VISITOR_INFO1_LIVE': '-F5Uurh13H0', 'VISITOR_PRIVACY_METADATA': 'CgJJRBIEGgAgYA%3D%3D', '__Secure-ROLLOUT_TOKEN': 
-'COi1zMK9u_uNCxDTlJ2jw5mPAxjTlJ2jw5mPAw%3D%3D'}
+### Output JSON
+```bash
+Fetching cookies from: https://facebook.com/
+Cookies found: {'fr': '0qhvcEPszmVSmExBF..Boqw-r..AAA.0.0.Boqw-r.AWe5t84W9KkqFc6QoQPZqX7icCs', 'sb': 'qw-raOaLC5CvSSBM3qNhw0wf'}
 [+] Cookies diexport ke cookies.json
 Exported cookies to cookies.json
+```
+
+### Output CSV
+```bash
+Fetching cookies from: https://facebook.com/
+Cookies found: {'fr': '0o5AyAWMjYLU5Wf8G..Boqw_G..AAA.0.0.Boqw_G.AWejVulJjL0qf-r097kKCKBqM4k', 'sb': 'xg-raIpCTxgOpbwcUJfHj7bj'}
+[+] Cookies diexport ke cookies.csv
+Exported cookies to cookies.csv
 ```
 
 ## Testing
