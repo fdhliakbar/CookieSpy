@@ -126,4 +126,4 @@ python your_file.py
 
 ---
 
-<img src="https://i.pinimg.com/1200x/2c/be/1d/2cbe1db9099cfd8409444f5837d16afb.jpg" alt="Anime Banner" />
+<img src="https://i.pinimg.com/736x/86/96/ae/8696aec7ca72bc24b22c45ef8f09081b.jpg" alt="Onodera Kosaki Banner" />
