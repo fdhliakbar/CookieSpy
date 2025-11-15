@@ -1,0 +1,71 @@
+# VCS/IDE
+.git/
+.gitignore
+.github/
+.vscode/
+.idea/
+.devcontainer/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Temp/design
+*.drawio
+*.tmp
+*.temp
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Testing
+test/
+tests/
+
+# Docs
+docs/
+*.md
+!README.md
+*.rst
+
+# Examples/notebooks/media (sesuaikan bila perlu)
+examples/
+notebooks/
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Data (hindari global *.json bila dipakai saat build)
+data/
+datasets/
+
+# Environments
+.env
+.env.*
+.venv
+env/
+venv/
+ENV/
+
+# Build/dist/cache
+build/
+dist/
+*.egg-info/
+.cache
+.tox
+pip-log.txt
+pip-delete-this-directory.txt

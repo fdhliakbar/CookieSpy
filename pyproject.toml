@@ -13,7 +13,8 @@ authors = [
 ]
 dependencies = [
   "requests>=2.0",
-  "pytest>=6.0"
+  "flask>=2.3",
+  "rich>=12.0"
 ]
 requires-python = ">=3.10"
 
@@ -30,3 +31,8 @@ Issues = "https://github.com/fdhliakbar/cookiespy/issues"
 
 [project.scripts]
 cookiespy = "cookiespy.cli:main"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=6.0",
+]
